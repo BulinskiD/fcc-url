@@ -39,7 +39,7 @@ router.get("/:short_url", async (req, res, next) => {
 });
 
 router.use((err, req, res, next) => {
-  res.status(400).json({ error: error.message });
+  res.status(400).json({ error: err.message });
 });
 
 module.exports = { router };
