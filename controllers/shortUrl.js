@@ -6,10 +6,12 @@ const router = express.Router();
 router.post("/", async (req, res, next) => {
   const { original_url } = req.body;
   try {
+    const count = await Url.count();
+    const short_url = count + 1;
     new URL(original_url);
-    const url = new Url(req.body);
+    const url = new Url({ original_url, short_url: count + 1 });
     await url.save();
-    res.status(201).json(url);
+    res.status(201).json({ original_url, short_url });
   } catch (error) {
     next(error);
   }
