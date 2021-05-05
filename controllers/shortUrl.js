@@ -4,7 +4,7 @@ const { Url } = require("../model/URL");
 const router = express.Router();
 
 router.post("/", async (req, res, next) => {
-  const { original_url } = req.body;
+  const { url_input: original_url } = req.body;
   try {
     const count = await Url.count();
     const short_url = count + 1;
