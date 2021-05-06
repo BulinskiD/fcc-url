@@ -8,6 +8,6 @@
   "env": {
       "NODE_ENV": "development"
   },
-  "ext": "js,json,html,css",
-  "delay": "2500"
+  "ext": "ts,js,json,html,css",
+  "exec": "ts-node ./server.ts"
 }
