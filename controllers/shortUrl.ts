@@ -37,7 +37,7 @@ router.post<ParamsDictionary, UrlType, { url: string }>(
   }
 );
 
-router.get("/:short_url", async (req, res, next) => {
+router.get<ParamsDictionary, void>("/:short_url", async (req, res, next) => {
   try {
     const page = await Url.findOne({ short_url: Number(req.params.short_url) });
     if (page) {
