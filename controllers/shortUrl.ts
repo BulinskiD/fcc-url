@@ -1,4 +1,4 @@
-import express = require("express");
+import express from "express";
 import { Url, UrlType } from "../model/URL";
 import { NextFunction, Request, Response } from "express";
 import { ParamsDictionary } from "express-serve-static-core";
