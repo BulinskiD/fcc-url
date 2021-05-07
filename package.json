@@ -4,7 +4,7 @@
   "description": "API project for freeCodeCamp",
   "main": "server.ts",
   "scripts": {
-    "start": "nodemon",
+    "start": "ts-node server.ts",
     "dev": "nodemon server.ts"
   },
   "dependencies": {
@@ -16,12 +16,12 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongodb": "^3.6.6",
-    "mongoose": "^5.12.7"
+    "mongoose": "^5.12.7",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
   },
   "license": "MIT",
   "devDependencies": {
-    "nodemon": "^2.0.4",
-    "ts-node": "^9.1.1",
-    "typescript": "^4.2.4"
+    "nodemon": "^2.0.4"
   }
 }

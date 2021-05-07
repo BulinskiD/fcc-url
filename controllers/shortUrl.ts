@@ -1,21 +1,10 @@
 import express from "express";
-import { Url, UrlType } from "../model/URL";
 import { NextFunction, Request, Response } from "express";
 import { ParamsDictionary } from "express-serve-static-core";
+import { Url, UrlType } from "../model/URL";
+import { parseUrl } from "../utils/parseUrl";
 
 const router = express.Router();
-
-function parseUrl(url: string): string {
-  try {
-    new URL(url);
-  } catch (error) {
-    throw new Error("invalid url");
-  }
-  if (url.includes("http")) {
-    return url;
-  }
-  throw new Error("invalid url");
-}
 
 router.post<ParamsDictionary, UrlType, { url: string }>(
   "/",
