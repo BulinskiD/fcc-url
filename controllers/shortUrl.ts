@@ -11,7 +11,7 @@ router.post<ParamsDictionary, UrlType, { url: string }>(
   async (req, res, next) => {
     const { url: original_url } = req.body;
     try {
-      const count = await Url.count();
+      const count = await Url.countDocuments();
       const short_url = count + 1;
       parseUrl(original_url);
       const url = new Url({
